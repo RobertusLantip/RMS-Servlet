@@ -29,15 +29,16 @@
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation -->
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="list">Users</a>
+            <a class="mdl-navigation__link" href="users/list">Users</a>
             <a class="mdl-navigation__link" href="../login">Login</a>
-            <a class="mdl-navigation__link" href="form">Create</a>
+            <a class="mdl-navigation__link" href="users/form">Create</a>
             <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/LogoutServlet">Logout</a>
         </nav>
     </div>
 </header>
     <div class="mdl-layout mdl-js-layout mdl-color--grey-100 box-center">
     	<main class="mdl-layout__content">
+            <h5>${message}</h5>
     		<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
               <thead>
                 <tr>

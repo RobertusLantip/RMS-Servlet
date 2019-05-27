@@ -21,8 +21,14 @@ public class DeleteUserServlet extends HttpServlet {
         String id = request.getParameter("userid");
         UserDao userDao = UserDaoImpl.getInstance();
         User user = userDao.find(Long.parseLong(id)).get();
+        if(request.getSession().getAttribute("name").equals(user.getUserName()))
+        {
+            request.setAttribute("message","You can't delete your own account");
+        }else
         if(userDao.delete(user)){
-            response.sendRedirect("users/list");
+//            response.sendRedirect("users/list");
         }
+
+        request.getRequestDispatcher("users/list").forward(request, response);
     }
 }
