@@ -32,7 +32,7 @@
             <a class="mdl-navigation__link" href="list">Users</a>
             <a class="mdl-navigation__link" href="../login">Login</a>
             <a class="mdl-navigation__link" href="form">Create</a>
-            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/LogoutServlet">Logout</a>
         </nav>
     </div>
 </header>

@@ -31,7 +31,7 @@
           <a class="mdl-navigation__link" href="users/list">Users</a>
           <a class="mdl-navigation__link" href="login">Login</a>
           <a class="mdl-navigation__link" href="users/form">Create</a>
-          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/LogoutServlet">Logout</a>
         </nav>
       </div>
     </header>
@@ -39,9 +39,9 @@
         <span class="mdl-layout-title">RMS</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="users/list">Users</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="login">Login</a>
+          <a class="mdl-navigation__link" href="users/form">Create</a>
+          <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/LogoutServlet">Logout</a>
         </nav>
       </div>
       <main class="mdl-layout__content">

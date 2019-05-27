@@ -17,7 +17,7 @@ public class CreateUserServlet extends HttpServlet {
         UserDao userDao = UserDaoImpl.getInstance();
         String un=request.getParameter("username");
         String pw=request.getParameter("password");
-        User u = new User((long) 7,un,pw);
+        User u = new User(un,pw);
         if(userDao.save(u)){
             response.sendRedirect("users/list");
         }
