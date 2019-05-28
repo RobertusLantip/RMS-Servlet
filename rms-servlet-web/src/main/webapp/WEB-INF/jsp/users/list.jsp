@@ -38,12 +38,7 @@
 </header>
     <div class="mdl-layout mdl-js-layout mdl-color--grey-100 box-center">
     	<main class="mdl-layout__content">
-            <% if (request.getParameter("message") == null) {
-                    out.println(" ");
-                } else {
-                    out.println("<b>"+request. getParameter("message")+"</b>!");
-                }
-            %>
+            ${message}
     		<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
               <thead>
                 <tr>
@@ -57,8 +52,8 @@
                   <tr>
                     <td class="mdl-data-table__cell--non-numeric"><c:out value = "${user.userName}"/></td>
                     <td><c:out value = "${user.password}"/></td>
-                      <td><a href="${pageContext.request.contextPath}/UpdateUserServlet?userid=${user.id}">Update</a></td>
-                      <td onclick="if (confirm('Are you sure you want to delete '+'${user.userName} ?')) { form.action='/Config?pg=FIBiller&amp;cmd=delete'; } else { return false; }" /><a href="${pageContext.request.contextPath}/DeleteUserServlet?userid=${user.id}" >Delete</a></td>
+                      <td><a href="${pageContext.request.contextPath}/users/update?userid=${user.id}">Update</a></td>
+                      <td onclick="if (confirm('Are you sure you want to delete '+'${user.userName} ?')) { form.action='/Config?pg=FIBiller&amp;cmd=delete'; } else { return false; }" /><a href="${pageContext.request.contextPath}/users/delete?userid=${user.id}" >Delete</a></td>
                   </tr>
               </c:forEach>
               </tbody>

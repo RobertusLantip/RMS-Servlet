@@ -45,7 +45,7 @@
     				<h2 class="mdl-card__title-text">Create</h2>
     			</div>
     	  	<div class="mdl-card__supporting-text">
-    				<form action="${pageContext.request.contextPath}/CreateUserServlet" method="post" onsubmit="return validate();">
+    				<form action="${pageContext.request.contextPath}/users/form" method="post" onsubmit="return validate();">
     					<div class="mdl-textfield mdl-js-textfield">
     						<input class="mdl-textfield__input" type="text" id="username" name="username" />
     						<label class="mdl-textfield__label" for="username">Username</label>

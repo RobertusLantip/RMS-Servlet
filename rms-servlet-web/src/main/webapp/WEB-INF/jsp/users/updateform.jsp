@@ -53,7 +53,7 @@
                 <h2 class="mdl-card__title-text">Update</h2>
             </div>
             <div class="mdl-card__supporting-text">
-                <form action="${pageContext.request.contextPath}/UpdateUserServlet" method="post" onsubmit="return validate();">
+                <form action="${pageContext.request.contextPath}/users/update" method="post" onsubmit="return validate();">
                     <c:forEach items = "${users}" var="user">
                         <input type="hidden" value="<c:out value = "${user.id}"/>" name="id">
                     <div class="mdl-textfield mdl-js-textfield">

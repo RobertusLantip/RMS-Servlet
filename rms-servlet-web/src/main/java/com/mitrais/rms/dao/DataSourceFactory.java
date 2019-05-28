@@ -3,7 +3,12 @@ package com.mitrais.rms.dao;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.Properties;
 
 /**
  * This class provides MySQL datasource to be used to connect to database.
@@ -16,12 +21,22 @@ public class DataSourceFactory
     DataSourceFactory()
     {
         MysqlDataSource dataSource = new MysqlDataSource();
+
         // TODO: make these database setting configurable by moving to properties file
-        dataSource.setDatabaseName("rmsdb");
-        dataSource.setServerName("localhost");
-        dataSource.setPort(3306);
-        dataSource.setUser("root");
-        dataSource.setPassword("");
+        try {
+            InputStream reader=DataSourceFactory.class.getClassLoader().getResourceAsStream("database.properties");
+            Properties p=new Properties();
+            p.load(reader);
+
+            dataSource.setDatabaseName(p.getProperty("db.name"));
+            dataSource.setServerName(p.getProperty("db.servername"));
+            dataSource.setPort(Integer.parseInt(p.getProperty("db.port")));
+            dataSource.setUser(p.getProperty("db.user"));
+            dataSource.setPassword(p.getProperty("db.password"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         this.dataSource = dataSource;
     }
 
