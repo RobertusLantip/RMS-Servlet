@@ -29,21 +29,27 @@
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation -->
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="users/list">Users</a>
+            <a class="mdl-navigation__link" href="list">Users</a>
             <a class="mdl-navigation__link" href="../login">Login</a>
-            <a class="mdl-navigation__link" href="users/form">Create</a>
+            <a class="mdl-navigation__link" href="form">Create</a>
             <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/LogoutServlet">Logout</a>
         </nav>
     </div>
 </header>
     <div class="mdl-layout mdl-js-layout mdl-color--grey-100 box-center">
     	<main class="mdl-layout__content">
-            <h5>${message}</h5>
+            <% if (request.getParameter("message") == null) {
+                    out.println(" ");
+                } else {
+                    out.println("<b>"+request. getParameter("message")+"</b>!");
+                }
+            %>
     		<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
               <thead>
                 <tr>
                   <th class="mdl-data-table__cell--non-numeric">User Name</th>
                   <th>Password</th>
+                    <th colspan="2" style="text-align: center">Action</th>
                 </tr>
               </thead>
               <tbody>
